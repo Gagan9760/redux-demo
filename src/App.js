@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import ChildOne from "./components/ChildOne";
+import { Provider } from 'react-redux'
+import store from "./redux/store";
+import ChildTwo from "./components/ChildTwo";
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import Middle from "./Styles/Middle";
+import ChildThree from "./components/ChildThree";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+      <Middle>
+      <Link to='/c1'>C1</Link>
+      <Link to='/c2'>C2</Link>
+      <Link to='/c3'>C3</Link>
+      </Middle>
+      
+        <Switch>
+          <Route path='/c1' component={ChildOne}/>
+          <Route path='/c2' component={ChildTwo}/>
+          <Route path='/c3' component={ChildThree}/>
+        </Switch>
+
+
+      </BrowserRouter>
+    </Provider>
   );
 }
 
