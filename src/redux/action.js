@@ -1,4 +1,4 @@
-import { DECREASE, TEXT } from "./actionType"
+import { DECREASE, RESET, TEXT } from "./actionType"
 import { INCREASE } from "./actionType"
 
 export const increaser = () => {
@@ -16,5 +16,11 @@ export const decreaser = () =>{
 export const textChanger = ()=>{
     return {
         type : TEXT
+    }
+}
+
+export const reset = ()=>{
+    return{
+        type: RESET
     }
 }

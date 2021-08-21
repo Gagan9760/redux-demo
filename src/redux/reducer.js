@@ -1,4 +1,4 @@
-import {DECREASE} from './actionType'
+import {DECREASE, RESET} from './actionType'
 import { INCREASE } from './actionType'
 import { TEXT } from './actionType'
 const intialState = {
@@ -20,6 +20,11 @@ const reducer = (state = intialState,action)=>{
             ...state,
             init: state.init+100,
             text: "ADDING 100"
+        }
+
+        case RESET: return{
+            ...state,
+            init: 0
         }
         default : return state
     }
