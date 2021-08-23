@@ -1,9 +1,12 @@
-import {DECREASE, RESET} from './actionType'
+import {DECREASE, RESET, SET, REMOVIE, SET_MOVIE, SET_CREW, REM_CREW} from './actionType'
 import { INCREASE } from './actionType'
 import { TEXT } from './actionType'
 const intialState = {
     init : 10,
-    text : 'Dummy'
+    text : 'Dummy',
+    data: [],
+    movie: [],
+    crew: []
 }
 
 const reducer = (state = intialState,action)=>{
@@ -25,6 +28,27 @@ const reducer = (state = intialState,action)=>{
         case RESET: return{
             ...state,
             init: 0
+        }
+        case SET: return{
+            ...state,
+            data: action.payload
+        }
+        case REMOVIE: return{
+            ...state,
+            movie: []
+        }
+        case SET_MOVIE: return{
+            ...state,
+            movie: action.payload
+        }
+
+        case SET_CREW: return{
+            ...state,
+            crew: action.payload
+        }
+        case REM_CREW: return{
+            ...state,
+            crew: []
         }
         default : return state
     }

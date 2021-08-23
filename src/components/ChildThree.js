@@ -1,5 +1,5 @@
 import React from 'react'
-import Middle from '../Styles/Middle'
+import {Middle} from '../Styles/Middle'
 import { useSelector,useDispatch } from 'react-redux'
 import { increaser,decreaser, textChanger, reset } from '../redux/action'
 const ChildThree = () => {

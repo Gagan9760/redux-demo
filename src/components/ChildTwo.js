@@ -1,5 +1,5 @@
 import React from 'react'
-import Middle from '../Styles/Middle'
+import {Middle} from '../Styles/Middle'
 import { useDispatch,useSelector } from 'react-redux'
 import { decreaser } from '../redux/action'
 
